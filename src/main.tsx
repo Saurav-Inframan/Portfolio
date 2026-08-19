@@ -28,7 +28,7 @@ createRoot(document.getElementById("root")!).render(
     >
       <TooltipProvider delayDuration={200}>
         <SmoothScroll>
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
             <ScrollToTop />
             <div className="flex flex-col min-h-screen bg-background text-foreground">
               <Navbar />

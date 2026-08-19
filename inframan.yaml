@@ -1,0 +1,21 @@
+version: v1
+application: portfolio-react-saurav
+services:
+    portfolio:
+        type: web
+        port: 8080
+        domain: task-manager.inframan.cloud
+        path_prefix: /react
+        node_pool: application-pool
+        scaling:
+            type: concurrency
+            min_replicas: 0
+            max_replicas: 1
+            target: 100
+        resources:
+            cpu_request: 100m
+            memory_request: 128Mi
+        build:
+            method: docker
+            dockerfile: ./Dockerfile
+        path: ""
